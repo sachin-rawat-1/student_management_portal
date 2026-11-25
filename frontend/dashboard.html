@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard | Student Management Portal</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><h1>Student Management Portal</h1><p>Administrator Dashboard</p></header>
+<main class="container">
+  <div class="toolbar" style="justify-content:space-between;align-items:center">
+    <div><h2>Dashboard</h2><p class="small-note">Welcome, <strong id="adminName">Administrator</strong></p></div>
+    <button type="button" onclick="logout()">Logout</button>
+  </div>
+  <section class="cards" aria-label="Portal statistics">
+    <article class="card"><h3>Total Students</h3><p class="number" id="totalStudents">—</p></article>
+    <article class="card"><h3>Total Courses</h3><p class="number" id="totalCourses">—</p></article>
+    <article class="card"><h3>Attendance Records</h3><p class="number" id="totalAttendance">—</p></article>
+    <article class="card"><h3>Marks Records</h3><p class="number" id="totalMarks">—</p></article>
+  </section>
+  <h2>Manage Portal</h2>
+  <div class="buttons">
+    <a href="/students.html">Add Student</a>
+    <a href="/view_students.html">View Students</a>
+    <a href="/attendance.html">Attendance</a>
+    <a href="/marks.html">Marks</a>
+    <a href="/reports.html">Academic Reports</a>
+  </div>
+  <p id="message" class="message" role="status" aria-live="polite"></p>
+</main>
+<footer>Student Management Portal | College Project</footer>
+<script src="/app.js"></script><script src="/logout.js"></script>
+</body></html>

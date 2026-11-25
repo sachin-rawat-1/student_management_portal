@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Student Reports</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><h1>Student Management Portal</h1><p>Academic Reports</p></header>
+<main class="container">
+  <h2>Student Performance and Attendance Report</h2>
+  <p class="small-note">Attendance percentage is calculated from recorded attendance days. Marks percentage uses the sum of recorded subjects.</p>
+  <div class="buttons"><button id="printButton" type="button">Print Report</button><a href="/dashboard.html">Dashboard</a><button type="button" onclick="logout()">Logout</button></div>
+  <p id="message" class="message" role="status"></p>
+  <div class="table-wrapper"><table><thead><tr><th>Roll No.</th><th>Name</th><th>Course</th><th>Semester</th><th>Present / Days</th><th>Attendance %</th><th>Marks</th><th>Marks %</th></tr></thead><tbody id="reportTable"></tbody></table></div>
+</main>
+<footer>Student Management Portal | College Project</footer>
+<script src="/reports.js"></script><script src="/logout.js"></script>
+</body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Attendance</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><h1>Student Management Portal</h1><p>Attendance Management</p></header>
+<main class="container">
+  <h2>Mark Attendance</h2>
+  <form id="attendanceForm">
+    <label for="student">Student</label><select id="student" required><option value="">Loading students...</option></select>
+    <label for="attendanceDate">Date</label><input type="date" id="attendanceDate" required>
+    <label for="status">Status</label><select id="status" required><option value="Present">Present</option><option value="Absent">Absent</option></select>
+    <button type="submit">Save Attendance</button>
+  </form>
+  <p id="message" class="message" role="status"></p>
+  <h2>Attendance Records</h2>
+  <div class="table-wrapper"><table><thead><tr><th>Roll No.</th><th>Name</th><th>Date</th><th>Status</th></tr></thead><tbody id="attendanceTable"></tbody></table></div>
+  <div class="buttons"><a href="/dashboard.html">Dashboard</a><a href="/reports.html">Reports</a><button onclick="logout()">Logout</button></div>
+</main>
+<footer>Student Management Portal | College Project</footer>
+<script src="/attendance.js"></script><script src="/logout.js"></script>
+</body></html>

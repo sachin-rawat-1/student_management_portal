@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marks Management</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><h1>Student Management Portal</h1><p>Examination Marks Management</p></header>
+<main class="container">
+  <h2>Enter / Update Marks</h2>
+  <form id="marksForm">
+    <label for="student">Student</label><select id="student" required><option value="">Loading students...</option></select>
+    <label for="subject">Subject</label><input id="subject" maxlength="100" required>
+    <label for="obtained">Marks Obtained</label><input id="obtained" type="number" min="0" max="999.99" step="0.01" required>
+    <label for="total">Maximum Marks</label><input id="total" type="number" min="0.01" max="999.99" step="0.01" required>
+    <button type="submit">Save Marks</button>
+  </form>
+  <p id="message" class="message" role="status" aria-live="polite"></p>
+  <h2>Marks Records</h2>
+  <div class="table-wrapper"><table><thead><tr><th>Roll No.</th><th>Name</th><th>Subject</th><th>Obtained</th><th>Total</th><th>Percentage</th></tr></thead><tbody id="marksTable"></tbody></table></div>
+  <div class="buttons"><a href="/dashboard.html">Dashboard</a><a href="/reports.html">Reports</a><button type="button" onclick="logout()">Logout</button></div>
+</main>
+<footer>Student Management Portal | College Project</footer>
+<script src="/marks.js"></script><script src="/logout.js"></script>
+</body></html>
