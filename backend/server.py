@@ -4,6 +4,7 @@ import json
 import math
 import secrets
 import time
+import os
 from datetime import date
 from http.cookies import SimpleCookie
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -91,9 +92,19 @@ class StudentPortalHandler(SimpleHTTPRequestHandler):
         return self.current_session() is not None
 
     def same_origin(self):
-        # Use exactly http://127.0.0.1:8000 in the browser.
-        origin = self.headers.get("Origin")
-        return origin == f"http://{HOST}:{PORT}"
+        origin = self.headers.get("Origin", "")
+
+        allowed_origins = os.environ.get(
+            "ALLOWED_ORIGINS", ""
+        ).split(",")
+
+        allowed_origins = [
+            url.strip().rstrip("/")
+            for url in allowed_origins
+            if url.strip()
+        ]
+
+        return origin.rstrip("/") in allowed_origins
 
     def do_GET(self):
         path = unquote(urlparse(self.path).path)
