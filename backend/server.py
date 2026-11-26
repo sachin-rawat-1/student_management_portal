@@ -15,8 +15,8 @@ from database import connect_database
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = PROJECT_DIR / "frontend"
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", 8000))
 SESSION_TIMEOUT = 1800
 sessions = {}
 
